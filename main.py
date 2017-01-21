@@ -12,16 +12,13 @@ app = ClarifaiApp()
 # change image to camera image
 image = 'https://samples.clarifai.com/metro-north.jpg'
 res = app.tag_urls([image])
-list = res["outputs"][0]["data"]["concepts"]
-print(list)
+picList = res["outputs"][0]["data"]["concepts"]
+print(picList)
 
-# def parseResponse(resp):
-#   tags = []
-#   if (resp.status_code == 'OK'):
-#     var results = resp.results
-#     tags = results[0].result.tag.classes
-#   	return tags
+# userList = ["train"]
+# matchedWords = findMatchingWords(picList, userList)
 
-def findMatchingWords(picList, userList):
-	for userWord in userList:
-		for picWord in picList:
+# def findMatchingWords(picList, userList):
+# 	for userWord in userList:
+# 		for picWord in picList:
+
