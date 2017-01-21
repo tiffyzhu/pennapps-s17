@@ -13,7 +13,7 @@ app = ClarifaiApp()
 image = 'https://samples.clarifai.com/metro-north.jpg'
 res = app.tag_urls([image])
 picList = res["outputs"][0]["data"]["concepts"]
-print(picList)
+# (picList)
 
 # userList = ["train"]
 # matchedWords = findMatchingWords(picList, userList)
