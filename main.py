@@ -23,7 +23,7 @@ def findMatchingWords(picList, userList):
 	for userWord in userList:
 		for picWord in picList:
 			if (userWord == picWord["name"]):
-				list_[picWord] = userWord
+                            list_["we"] = userWord
         return list_
 
 matchedWords = findMatchingWords(picList, userList)
