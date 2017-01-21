@@ -5,8 +5,12 @@
 # CLARIFAI_APP_SECRET: []: 0Nux82Kte8-4Gx1H7f2SqLOKuT_vUVd7JcMO3u95
 
 from clarifai.rest import ClarifaiApp
-
+from flask_api import FlaskAPI
 app = ClarifaiApp()
+app_flask = FlaskAPI(__name__)
+@app_flask.route('/',methods=['GET'])
+def eep():
+    return "plz work"
 # predict with general model
 
 # change image to camera image
