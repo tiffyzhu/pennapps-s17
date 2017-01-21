@@ -31,4 +31,4 @@ print(matchedWords)
 @app_flask.route('/',methods=['GET'])
 def eep():
     print("what")
-    return matchedWords
+    return jasonfy(matchedWords)
