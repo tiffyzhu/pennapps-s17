@@ -9,4 +9,7 @@ from clarifai.rest import ClarifaiApp
 app = ClarifaiApp()
 # predict with general model
 image = 'https://samples.clarifai.com/metro-north.jpg'
-app.tag_urls([image])
+#u'outputs'.u'data'.u'concepts'
+res = app.tag_urls([image])
+list = res["outputs"][0]["data"]["concepts"]
+print(list)
