@@ -19,11 +19,11 @@ picList = res["outputs"][0]["data"]["concepts"]
 userList = ["train"]
 
 def findMatchingWords(picList, userList):
-	list_ = []
+	list_ = dict()
 	for userWord in userList:
 		for picWord in picList:
 			if (userWord == picWord["name"]):
-				list_.append(userWord)
+				list_[picWord] = userWord
         return list_
 
 matchedWords = findMatchingWords(picList, userList)
