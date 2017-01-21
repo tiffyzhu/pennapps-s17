@@ -27,6 +27,7 @@ def findMatchingWords(picList, userList):
         return list_
 
 matchedWords = findMatchingWords(picList, userList)
+print(matchedWords)
 @app_flask.route('/',methods=['GET'])
 def eep():
     print("what")
