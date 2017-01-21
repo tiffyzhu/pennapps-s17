@@ -6,6 +6,7 @@
 
 from clarifai.rest import ClarifaiApp
 from flask import Flask
+import json
 
 app = ClarifaiApp()
 app_flask = Flask(__name__)
@@ -31,4 +32,4 @@ print(matchedWords)
 @app_flask.route('/',methods=['GET'])
 def eep():
     print("what")
-    return jasonfy(matchedWords)
+    return json.dump(matchedWords)
