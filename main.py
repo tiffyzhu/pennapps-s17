@@ -32,4 +32,4 @@ print(matchedWords)
 @app_flask.route('/',methods=['GET'])
 def eep():
     print("what")
-    return json.dump(matchedWords)
+    return json.dumps(matchedWords)
