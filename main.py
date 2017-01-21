@@ -24,6 +24,7 @@ def findMatchingWords(picList, userList):
 		for picWord in picList:
 			if (userWord == picWord["name"]):
 				list.append(userWord)
+        return list
 
 matchedWords = findMatchingWords(picList, userList)
 @app_flask.route('/',methods=['GET'])
