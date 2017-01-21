@@ -6,6 +6,7 @@
 
 from clarifai.rest import ClarifaiApp
 from flask import Flask
+
 app = ClarifaiApp()
 app_flask = Flask(__name__)
 @app_flask.route('/',methods=['GET'])
@@ -17,12 +18,14 @@ def eep():
 image = 'https://samples.clarifai.com/metro-north.jpg'
 res = app.tag_urls([image])
 picList = res["outputs"][0]["data"]["concepts"]
-# (picList)
 
-# userList = ["train"]
-# matchedWords = findMatchingWords(picList, userList)
+userList = ["train"]
+matchedWords = findMatchingWords(picList, userList)
+print(matchedWords)
 
-# def findMatchingWords(picList, userList):
-# 	for userWord in userList:
-# 		for picWord in picList:
-
+def findMatchingWords(picList, userList):
+	list = []
+	for userWord in userList:
+		for picWord in picList:
+			if (userWord == picWord["name"]):
+				list.append(userWord)
