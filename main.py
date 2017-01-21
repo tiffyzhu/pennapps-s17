@@ -9,9 +9,6 @@ from flask import Flask
 
 app = ClarifaiApp()
 app_flask = Flask(__name__)
-@app_flask.route('/',methods=['GET'])
-def eep():
-    return "plz work"
 # predict with general model
 
 # change image to camera image
@@ -20,8 +17,6 @@ res = app.tag_urls([image])
 picList = res["outputs"][0]["data"]["concepts"]
 
 userList = ["train"]
-matchedWords = findMatchingWords(picList, userList)
-print(matchedWords)
 
 def findMatchingWords(picList, userList):
 	list = []
@@ -29,3 +24,8 @@ def findMatchingWords(picList, userList):
 		for picWord in picList:
 			if (userWord == picWord["name"]):
 				list.append(userWord)
+
+matchedWords = findMatchingWords(picList, userList)
+@app_flask.route('/',methods=['GET'])
+def eep():
+    return matchedWords
